@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps Place Tracker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <h1>🗺️ Place Tracker</h1>
+            <p>Manage your todo and visited places</p>
+        </header>
+
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="todo">📝 Todo List</button>
+            <button class="tab-btn" data-tab="visited">✅ Visited</button>
+            <button class="tab-btn" data-tab="settings">⚙️ Settings</button>
+        </nav>
+
+        <main class="popup-content">
+            <!-- Todo List Tab -->
+            <div class="tab-content active" id="todo-tab">
+                <div class="tab-header">
+                    <h2>Places to Visit</h2>
+                    <span class="count" id="todo-count">0</span>
+                </div>
+                <div class="place-list" id="todo-list">
+                    <div class="empty-state">
+                        <p>📍 No places in your todo list yet</p>
+                        <small>Visit Google Maps and add places you want to visit!</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visited List Tab -->
+            <div class="tab-content" id="visited-tab">
+                <div class="tab-header">
+                    <h2>Visited Places</h2>
+                    <span class="count" id="visited-count">0</span>
+                </div>
+                <div class="place-list" id="visited-list">
+                    <div class="empty-state">
+                        <p>✅ No visited places yet</p>
+                        <small>Mark places as visited to see them here!</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="tab-header">
+                    <h2>Settings</h2>
+                </div>
+                <div class="settings-list">
+                    <div class="setting-item">
+                        <label for="auto-prompt">
+                            <span>Auto-prompt when visiting todo places</span>
+                            <small>Show prompt asking if you've visited a place</small>
+                        </label>
+                        <input type="checkbox" id="auto-prompt" class="toggle-switch">
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="show-visited">
+                            <span>Show visited places on map</span>
+                            <small>Display markers for places you've already visited</small>
+                        </label>
+                        <input type="checkbox" id="show-visited" class="toggle-switch">
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="prompt-delay">
+                            <span>Prompt delay (seconds)</span>
+                            <small>How long to wait before showing the visited prompt</small>
+                        </label>
+                        <input type="range" id="prompt-delay" min="1" max="10" step="1" value="2">
+                        <span class="range-value" id="delay-value">2s</span>
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn btn-secondary" id="export-data">📤 Export Data</button>
+                    <button class="btn btn-secondary" id="import-data">📥 Import Data</button>
+                    <button class="btn btn-danger" id="clear-data">🗑️ Clear All Data</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="popup-footer">
+            <p>Built with ❤️ for better map exploration</p>
+        </footer>
+    </div>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="file-input" accept=".json" style="display: none;">
+
+    <script src="popup.js"></script>
+</body>
+</html>
