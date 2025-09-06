@@ -1,0 +1,39 @@
+{
+  "name": "maps-place-tracker",
+  "version": "1.0.0",
+  "description": "A Chrome browser extension that enhances Google Maps with todo and visited places tracking",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"No build process needed for this extension\"",
+    "lint": "echo \"Linting not configured yet\"",
+    "dev": "echo \"Load the extension in Chrome Developer Mode\""
+  },
+  "keywords": [
+    "chrome-extension",
+    "google-maps",
+    "travel",
+    "places",
+    "todo",
+    "visited",
+    "maps-enhancement"
+  ],
+  "author": "Nikki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikithasri24/maps-place-tracker"
+  },
+  "bugs": {
+    "url": "https://github.com/nikithasri24/maps-place-tracker/issues"
+  },
+  "homepage": "https://github.com/nikithasri24/maps-place-tracker#readme",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "Chrome >= 88"
+  ]
+}
